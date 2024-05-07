@@ -25,7 +25,7 @@ function SideNav() {
     },
     {
       id:2,
-      name:'Tubeguruji Pro',
+      name:'Learning Destiny Pro',
       icon:BadgeCheck,
       path:'/tubeguruji-pro',
       auth:true

@@ -42,9 +42,9 @@ function TubegurujiPro() {
         const options={
             key:process.env.NEXT_PUBLIC_RAZORPAY_LIVE_KEY,
             subscription_id:subscriptionId,
-            name:'Tubeguruji Academy',
-            description:'Tubeguruju Pro Membership',
-            image:'https://www.tubeguruji.com/logo2.jpg',
+            name:'Learning Destiny',
+            description:'Membership',
+            image:'https://images.app.goo.gl/riq5nLYrq1UsD1nR9',
             handler:async(resp)=>{
                 console.log(resp);
                 if(resp)

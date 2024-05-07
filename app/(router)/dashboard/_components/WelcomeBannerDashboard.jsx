@@ -4,7 +4,7 @@ import React from 'react'
 function WelcomeBannerDashboard({user}) {
   return (
     <div className='bg-purple-100 rounded-sm p-5 flex gap-5 items-center'>
-        <Image src={'/hi-panda.png'} alt='panda'
+        <Image src={'/login.jpg'} alt='Aditya'
         width={150}
         height={150}/>
         <div>
