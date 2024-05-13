@@ -1,6 +1,8 @@
 const { gql, default: request } = require("graphql-request")
 
-const MASTER_URL="https://api-us-east-1-shared-usea1-02.hygraph.com/v2/"+process.env.NEXT_PUBLIC_HYGRAPH_API_KEY+"/master"
+
+
+const MASTER_URL="https://api-ap-south-1.hygraph.com/v2/"+process.env.NEXT_PUBLIC_HYGRAPH_API_KEY+"/master"
 
 const getAllCourseList=async()=>{
     const query=gql`
@@ -10,7 +12,7 @@ const getAllCourseList=async()=>{
           name
           id
           free
-          description
+          discription
           demoUrl
           banner {
             url
@@ -73,7 +75,7 @@ const getCourseById=async(courseId)=>{
         }
       }
       demoUrl
-      description
+      discription
       free
       id
       name
@@ -154,7 +156,7 @@ const getUserEnrolledCourseDetails=async(id,email)=>{
           }
         }
         demoUrl
-        description
+        discription
         free
         id
         name
@@ -207,7 +209,7 @@ const getUserAllEnrolledCourseList=async(email)=>{
         slug
         sourceCode
         free
-        description
+        discription
         demoUrl
         chapter(first: 50) {
           ... on Chapter {

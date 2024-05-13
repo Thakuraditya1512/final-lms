@@ -31,13 +31,15 @@ function SideNav() {
       auth:true
 
     },
-    {
-      id:4,
-      name:'Store',
+    
+     {
+      id:7,
+      name:'Quiz',
       icon:LayoutGrid,
-      path:'/store',
+      path:'/Quiz',
       auth:true
     },
+    
     
     // {
     //   id:3,
@@ -52,7 +54,14 @@ function SideNav() {
       icon:Mail,
       path:'/newsletter',
       auth:true
-    }
+    },
+     {
+      id:4,
+      name:'Join us',
+      icon:LayoutGrid,
+      path:'/store',
+      auth:true
+    },
   ]
 
   const path=usePathname();
@@ -60,7 +69,7 @@ function SideNav() {
     console.log("path",path)
   },[])
   return (
-    <div className='p-5 bg-white 
+    <div className='p-5  bg-gradient-to-b from-white to-blue-500 
     shadow-sm border h-screen'>
         <Image src='/logo.svg' alt='logo'
         width={170} height={80} />
@@ -73,12 +82,14 @@ function SideNav() {
             <div className={`group flex gap-3
             mt-2 p-3 text-[18px] items-center
              text-gray-500 cursor-pointer
-             hover:bg-primary
-             hover:text-white
+             hover:bg-
+             hover:black
              rounded-md
              transition-all ease-in-out duration-200
              ${path.includes(item.path)&&'bg-primary text-white'}
              `}>
+
+
               <item.icon className='group-hover:animate-bounce'/>
               <h2>{item.name}</h2>
             </div>

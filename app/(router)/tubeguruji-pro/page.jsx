@@ -53,7 +53,7 @@ function TubegurujiPro() {
                 }
             },
             theme:{
-                color:'#7D41E1'
+                color:'#40B5AD'
             }
         }
 
@@ -101,7 +101,7 @@ function TubegurujiPro() {
 
                             <p className="mt-2 sm:mt-4" >
                                 <strong className="text-3xl font-bold text-gray-900 sm:text-4xl">
-                                    4.99$
+                                    100 RS
                                 </strong>
 
                                 <span className="text-sm font-medium text-gray-700">/month</span>
@@ -219,7 +219,7 @@ function TubegurujiPro() {
 
                             <p className="mt-2 sm:mt-4">
                                 <strong className="text-3xl font-bold text-gray-900 sm:text-4xl">
-                                    39.99$
+                                   500 RS
                                 </strong>
 
                                 <span className="text-sm font-medium text-gray-700">/month</span>
@@ -317,8 +317,7 @@ function TubegurujiPro() {
                     </div>
                 </div>
             </div>
-            <p className='text-center'>Get your first month half price when you use 
-            the code <strong>TUBEGURUJI</strong> (monthly plan only).</p>
+            <p className='text-center'>Get your first month offer <strong>Learning Destiny</strong> (monthly plan only).</p>
         </div>
     );
 }

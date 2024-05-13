@@ -1,0 +1,46 @@
+.google-forms-list {
+    margin: 20px;
+  }
+  
+  .forms-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap cards if there's not enough space */
+  }
+  
+  .form-card {
+    flex: 0 0 calc(33.33% - 20px); /* Set width for 3 cards per row with margins */
+    margin: 10px; /* Margin between cards */
+    background-color: #fff; /* Card background color */
+    border: 1px solid #ddd; /* Card border */
+    border-radius: 8px; /* Card border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Card shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .form-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Increase shadow on hover */
+  }
+  
+  .card-header {
+    padding: 16px; /* Header padding */
+    border-bottom: 1px solid #ddd; /* Bottom border */
+    border-radius: 8px 8px 0 0; /* Border radius for header */
+  }
+  
+  .card-body {
+    padding: 16px; /* Body padding */
+  }
+  
+  .card-body p {
+    margin: 0; /* Remove default margin for paragraphs */
+  }
+  
+  a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove default underline */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  

@@ -20,8 +20,8 @@ function SideBanners() {
         {sideBannerList&&sideBannerList.map((item,index)=>(
             <div key={index} className='m-2 p-3 bg-white rounded-xl'>
                 <Image src={item.banner.url} alt='banner'
-                width={500}
-                height={300}
+                width={400}
+                height={200}
                 onClick={()=>window.open(item?.url)}
                 className='rounded-xl cursor-pointer' />
             </div>
