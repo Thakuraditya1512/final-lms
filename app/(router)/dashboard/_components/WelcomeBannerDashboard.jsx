@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 
 function WelcomeBannerDashboard({ user }) {
   return (
@@ -17,12 +17,12 @@ function WelcomeBannerDashboard({ user }) {
         <h2 className='text-2xl font-semibold md:text-3xl'>Welcome Back, 
           <span className='text-primary'>{user?.fullName}</span>
         </h2>
-        <p className='text-sm text-gray-600 md:text-base'>
+        <p className='text-sm text-gray-600 md:text-base md:w-80'>
           Let's pick up where you left off and continue your learning journey.
         </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default WelcomeBannerDashboard
+export default WelcomeBannerDashboard;

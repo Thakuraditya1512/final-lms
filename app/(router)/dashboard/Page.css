@@ -1,0 +1,43 @@
+/* Mobile First CSS */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .col-span-2,
+  .col-span-3,
+  .hidden {
+    display: none;
+  }
+  
+  /* Medium Screen CSS */
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    .col-span-2 {
+      display: block;
+    }
+  
+    .hidden {
+      display: none;
+    }
+  }
+  
+  /* Large Screen CSS */
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  
+    .col-span-3 {
+      display: block;
+    }
+  
+    .hidden {
+      display: block;
+    }
+  }
+  

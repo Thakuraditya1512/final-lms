@@ -1,9 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
  
 body{
   background-color: #8dc4fa;
+  margin:0;
 }
 @layer base {
   :root {

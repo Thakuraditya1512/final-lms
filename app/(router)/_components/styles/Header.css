@@ -1,0 +1,22 @@
+.search-bar {
+    display: flex;
+    gap: 2rem;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  
+  .search-bar input[type="text"] {
+    outline: none;
+  }
+  
+  .get-started-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .get-started-container .bell-icon {
+    color: #ccc;
+  }
+  
