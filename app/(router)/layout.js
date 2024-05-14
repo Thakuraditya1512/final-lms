@@ -1,16 +1,18 @@
-// Layout.jsx
-"use client";
+"use client"; 
+
 import React, { useContext, useEffect, useState } from 'react';
 import SideNav from './_components/SideNav';
 import Header from './_components/Header';
 import { useUser } from '@clerk/nextjs';
 import GlobalApi from '../_utils/GlobalApi';
 import { UserMemberContext } from '../_context/UserMemberContext';
+import { useMediaQuery } from '@react-hook/media-query'; // Import useMediaQuery
 
 function Layout({ children }) {
   const { user } = useUser();
   const { isMember, setIsMember } = useContext(UserMemberContext);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const isMobile = useMediaQuery('(max-width: 768px)'); // Define your mobile screen width breakpoint
 
   useEffect(() => {
     user && checkUserMembership();
@@ -30,7 +32,7 @@ function Layout({ children }) {
   };
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       {/* Mobile Sidebar Toggle Button */}
       <button
         className={`mobile-sidebar-toggle md:hidden fixed top-5 right-5 z-50 bg-white p-2 rounded-lg shadow-md transition-all duration-300 ${
@@ -56,7 +58,7 @@ function Layout({ children }) {
 
       {/* Main Content */}
       <div className='md:ml-64'>
-        <Header />
+        {!isMobile && <Header />}
         <div className='w-full'>{children}</div>
       </div>
     </div>
