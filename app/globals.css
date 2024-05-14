@@ -7,9 +7,10 @@
   box-sizing: border-box;
 }
  
-body{
-  background-color: #8dc4fa;
+body {
+  background: linear-gradient(100deg, #032140, #5d0000);
 }
+
 @layer base {
   :root {
     --background: 0 0% 100%;
