@@ -144,7 +144,7 @@ function TubegurujiPro() {
                                     />
                                 </svg>
 
-                                <span className="text-gray-700"> Free Source Code </span>
+                                <span className="text-gray-700">  Source Code </span>
                             </li>
 
                             <li className="flex items-center gap-1">
@@ -163,7 +163,7 @@ function TubegurujiPro() {
                                     />
                                 </svg>
 
-                                <span className="text-gray-700"> Free App Membership </span>
+                                <span className="text-gray-700"> App Membership </span>
                             </li>
 
                             <li className="flex items-center gap-1">
@@ -182,7 +182,7 @@ function TubegurujiPro() {
                                     />
                                 </svg>
 
-                                <span className="text-gray-700"> Email & Instagram DM support </span>
+                                <span className="text-gray-700"> Email support </span>
                             </li>
                         </ul>
 
@@ -262,7 +262,7 @@ function TubegurujiPro() {
                                     />
                                 </svg>
 
-                                <span className="text-gray-700"> Free Source Code </span>
+                                <span className="text-gray-700"> Source Code </span>
                             </li>
 
                             <li className="flex items-center gap-1">
@@ -281,7 +281,7 @@ function TubegurujiPro() {
                                     />
                                 </svg>
 
-                                <span className="text-gray-700"> Free App Membership </span>
+                                <span className="text-gray-700"> App Membership </span>
                             </li>
 
                             <li className="flex items-center gap-1">
@@ -300,7 +300,7 @@ function TubegurujiPro() {
                                     />
                                 </svg>
 
-                                <span className="text-gray-700"> Email & Instagram DM support </span>
+                                <span className="text-gray-700"> Email support </span>
                             </li>
                         </ul>
 

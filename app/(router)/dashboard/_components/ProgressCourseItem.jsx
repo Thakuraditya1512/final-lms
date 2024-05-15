@@ -12,7 +12,7 @@ function ProgressCourseItem({course}) {
     }
   return (
     <Link href={"/course-preview/"+course?.courseList?.slug}>
-    <div className='border rounded-md
+    <div className='border rounded-md bg-gradient-to-r from-red-500 to-yellow-500
     hover:shadow-md 
     hover:shadow-purple-300
     cursor-pointer'>
