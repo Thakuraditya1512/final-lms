@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: false,
     images: {
-        domains: ['media.graphassets.com', 'ap-south-1.graphassets.com']
+        domains: ['img.clerk.com','media.graphassets.com', 'ap-south-1.graphassets.com']
     },
     webpack: (config) => {
         // Add polyfills for required features
