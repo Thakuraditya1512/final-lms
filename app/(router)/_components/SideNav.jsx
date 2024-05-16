@@ -91,54 +91,49 @@ function SideNav() {
   }, [path]);
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : ''}`} style={{ backgroundColor: '#f8f8f8', height: '100vh' }}>
-      <div className="logo-container p-4 text-center" style={{ margin: '20px' }}>
-        {/* Replace 'water.svg' with your actual logo */}
-        <div className="relative" style={{margin:'20px'}}>
-          {user && isLoaded ? (
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" >
-          {user.imageUrl ? (
-            <div className="flex flex-col items-center justify-center">
-              <Image src={user.imageUrl } alt="User Image" width={80} height={80} className="rounded-full" />
-              <h2 className="mt-2 text-lg font-bold">{user.fullName || user.username|| "Guest"}</h2>
-            </div>
-          ) : (
-            <div>
-              <FaUserCircle size={80} color="#333" /> {/* Wrap FaUserCircle in a div */}
-              <h2 className="mt-2 text-lg font-bold">Guest</h2> {/* Add a h2 for Guest */}
-            </div>
-          )}
-        </div>
-        
-          
-          ) : (
-            <div className="mt-4 flex flex-col items-center justify-center">
-              <div className="flex flex-col items-center">
-                <FaUserCircle size={80} color="#333" /> {/* FaUserCircle icon */}
-                <h2 className="mt-2 text-lg font-bold">Guest</h2> {/* Guest text */}
-              </div>
-                        <Link href="/sign-in" passHref>
-
-            <Button>Login</Button> {/* Login button */}
-            </Link>
-
+<div className={`sidebar ${isOpen ? 'open' : ''}`} style={{ backgroundColor: '#f8f8f8', height: '100vh', display: 'flex', flexDirection: 'column' }}>
+  <div className="logo-container p-4 text-center">
+    {/* Replace 'water.svg' with your actual logo */}
+    <div className="relative">
+      {user && isLoaded ? (
+        <div className="mt-4 text-center">
+          <div className="mt-4">
+            {user.imageUrl ? (
+              <Image src={user.imageUrl} alt="User Image" width={80} height={80} className="rounded-full mx-auto" />
+            ) : (
+              <img src="/guestImage.jpg" alt="Guest Image" width={80} height={80} className="rounded-full mx-auto" />
+            )}
+            <h2 className="mt-2 text-lg font-bold">{user.fullName || user.username || "Guest"}</h2>
           </div>
-          
-          )}
         </div>
-      </div>
-
-      <div className='menu p-4'>
-        {menu.map((item) =>
-          item.auth ? (
-            <MenuItem key={item.id} item={item} isActive={path.includes(item.path)} isLoaded={isLoaded} />
-          ) : null
-        )}
-      </div>
-
-      {/* Button to toggle theme */}
-      {/* Add your toggle theme button here */}
+      ) : (
+        <div className="mt-4 flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center">
+            <FaUserCircle size={80} color="#333" /> {/* FaUserCircle icon */}
+            <h2 className="mt-2 text-lg font-bold">Guest</h2> {/* Guest text */}
+          </div>
+          <Link href="/sign-in" passHref>
+            <Button>Login</Button> {/* Login button */}
+          </Link>
+        </div>
+      )}
     </div>
+  </div>
+
+  <div className='menu p-4 flex-grow'>
+    {menu.map((item) =>
+      item.auth ? (
+        <MenuItem key={item.id} item={item} isActive={path.includes(item.path)} isLoaded={isLoaded} />
+      ) : null
+    )}
+  </div>
+
+  {/* Button to toggle theme */}
+  {/* Add your toggle theme button here */}
+</div>
+
+
+  
   );
 }
 
