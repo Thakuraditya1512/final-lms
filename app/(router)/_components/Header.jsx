@@ -11,7 +11,7 @@ function Header() {
     <div>
       {/* Scrolling Banner */}
        <div className='bg-gradient-to-r from-pink-500 to-white py-2'>
-        <marquee className='text-black font-bold'>Welcome to our website! Discover our courses today.</marquee>
+        <marquee className='text-black font-bold'>Welcome to our website! Discover our course today.</marquee>
       </div>
       {/* Header Content */}
       <div className='p-4 bg-white flex justify-between items-center' style={{ backgroundColor: '#fff' }}>
