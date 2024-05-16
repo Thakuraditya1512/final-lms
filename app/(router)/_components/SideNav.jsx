@@ -99,8 +99,8 @@ function SideNav() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" >
           {user.imageUrl ? (
             <div className="flex flex-col items-center justify-center">
-              <Image src={user.imageUrl} alt="User Image" width={80} height={80} className="rounded-full" />
-              <h2 className="mt-2 text-lg font-bold">{user.fullName || "Guest"}</h2>
+              <Image src={user.imageUrl } alt="User Image" width={80} height={80} className="rounded-full" />
+              <h2 className="mt-2 text-lg font-bold">{user.fullName || user.username|| "Guest"}</h2>
             </div>
           ) : (
             <div>
