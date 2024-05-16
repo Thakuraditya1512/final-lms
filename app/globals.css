@@ -7,9 +7,14 @@
   box-sizing: border-box;
 }
  
-body {
-  background: linear-gradient(100deg, #032140, #5d0000);
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
+
+
 
 @layer base {
   :root {

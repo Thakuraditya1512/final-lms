@@ -3,6 +3,7 @@ import { useUser } from '@clerk/nextjs';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
 function MenuItem({ item, isActive }) {
   return (
@@ -23,10 +24,15 @@ function MenuItem({ item, isActive }) {
 function SideNav() {
   const { user } = useUser();
   const path = usePathname();
+  const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   const menu = [
@@ -85,6 +91,13 @@ function SideNav() {
             <MenuItem key={item.id} item={item} isActive={path.includes(item.path)} />
           ) : null
         )}
+      </div>
+
+      {/* Button to toggle theme */}
+      <div className="flex justify-center mt-4">
+        <button className="px-4 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 focus:outline-none" onClick={toggleTheme}>
+          Toggle Theme
+        </button>
       </div>
     </div>
   );
