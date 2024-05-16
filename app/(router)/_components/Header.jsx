@@ -3,11 +3,36 @@ import { Button } from '@/components/ui/button'
 import { UserButton, useUser } from '@clerk/nextjs'
 import { BellDot } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
-
+import React ,{useState,useEffect}from 'react'
+import { Sun, Moon } from "react-feather";
+import { ThemeSwitcherProvider } from "react-css-theme-switcher";
+import { ThemeProvider } from 'next-themes'
 function Header() {
   const { user, isLoaded } = useUser();
+  const [themeState, setThemeState] = useState("light");
+
+  const themes = {
+    dark: `dark-theme.css`,
+    light: `light-theme.css`,
+  };
+  const toggleTheme = () => {
+    if (themeState === "dark") {
+      localStorage.setItem("theme", "light");
+      setThemeState("light");
+    } else {
+      localStorage.setItem("theme", "dark");
+      setThemeState("dark");
+    }
+  };
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const currentTheme = localStorage.getItem("theme") || "light"; // get the user theme state from localStorage
+      setThemeState(currentTheme);
+    }
+  }, []);
   return (
+    <ThemeProvider attribute='class'> 
+    <ThemeSwitcherProvider themeMap={themes} defaultTheme={themeState}>
     <div>
       {/* Scrolling Banner */}
        <div className='bg-gradient-to-r from-pink-500 to-white py-2'>
@@ -22,6 +47,25 @@ function Header() {
         </div>
         {/* Get Started Button & Bell Icon */}
         <div className='flex items-center gap-4'>
+        <div className="theme-toggle-container">
+            {themeState === "light" && (
+              <Sun
+                size={20}
+                color="black"
+                style={{ cursor: "pointer" }}
+                onClick={toggleTheme}
+              />
+            )}
+
+            {themeState === "dark" && (
+              <Moon
+                size={20}
+                color="white"
+                style={{ cursor: "pointer" }}
+                onClick={toggleTheme}
+              />
+            )}
+          </div>
           <BellDot className='text-gray-500'/>
           {isLoaded && user
           ? <UserButton afterSignOutUrl='/courses'/>
@@ -31,6 +75,8 @@ function Header() {
         </div>
       </div>
     </div>
+    </ThemeSwitcherProvider>
+    </ThemeProvider>
   )
 }
 

@@ -8,6 +8,10 @@ import { Button } from '@/components/ui/button';
 import { FaUserCircle } from 'react-icons/fa'; // Import the Avatar component from react-icons
 import './styles/SideNav.css';
 import { SignOutButton } from "@clerk/nextjs";
+import { Sun, Moon } from "react-feather";
+import { ThemeSwitcherProvider } from "react-css-theme-switcher";
+import { ThemeProvider } from 'next-themes'
+
 function MenuItem({ item, isActive, isLoaded }) {
   const { user } = useUser();
 
@@ -38,15 +42,38 @@ function SideNav() {
   const path = usePathname();
   const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+ // Keeps the state of the theme
+ const [themeState, setThemeState] = useState("light");
 
+ // light/dark themes related styles css files
+ const themes = {
+   dark: `dark-theme.css`,
+   light: `light-theme.css`,
+ };
+
+
+  const toggleTheme = () => {
+    if (themeState === "dark") {
+      localStorage.setItem("theme", "light");
+      setThemeState("light");
+    } else {
+      localStorage.setItem("theme", "dark");
+      setThemeState("dark");
+    }
+  };
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
-
+  // const toggleTheme = () => {
+  //   setTheme(theme === 'light' ? 'dark' : 'light');
+  // };
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const currentTheme = localStorage.getItem("theme") || "light"; // get the user theme state from localStorage
+      setThemeState(currentTheme);
+    }
+  }, []);
   const menu = [
     {
       id: 1,
@@ -91,6 +118,8 @@ function SideNav() {
   }, [path]);
 
   return (
+    <ThemeProvider attribute='class'> 
+    <ThemeSwitcherProvider themeMap={themes} defaultTheme={themeState}>
 <div className={`sidebar ${isOpen ? 'open' : ''}`} style={{ backgroundColor: '#f8f8f8', height: '100vh', display: 'flex', flexDirection: 'column' }}>
   <div className="logo-container p-4 text-center">
     {/* Replace 'water.svg' with your actual logo */}
@@ -134,15 +163,27 @@ function SideNav() {
         </SignOutButton>
         </Link>
       </div>
+
     )}
+      <div className="mt-4 flex bg-gray-200 hover:bg-gray-300 px-3 py-2 rounded-md flex-col items-center justify-center"  onClick={toggleTheme}
+    style={{ cursor: "pointer" }}>
+
+
+
+
+    Change Theme
+
+  </div>
   </div>
 
   {/* Button to toggle theme */}
   {/* Add your toggle theme button here */}
+  
 </div>
 
 
-  
+</ThemeSwitcherProvider>
+    </ThemeProvider>
   );
 }
 
