@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import { FaUserCircle } from 'react-icons/fa'; // Import the Avatar component from react-icons
 import './styles/SideNav.css';
-
+import { SignOutButton } from "@clerk/nextjs";
 function MenuItem({ item, isActive, isLoaded }) {
   const { user } = useUser();
 
@@ -125,6 +125,15 @@ function SideNav() {
       item.auth ? (
         <MenuItem key={item.id} item={item} isActive={path.includes(item.path)} isLoaded={isLoaded} />
       ) : null
+    )}
+ {user && isLoaded && (
+      <div className="mt-4 flex flex-col items-center justify-center">
+        <Link href='/courses'>
+        <SignOutButton>
+          <Button>Sign out</Button>
+        </SignOutButton>
+        </Link>
+      </div>
     )}
   </div>
 
