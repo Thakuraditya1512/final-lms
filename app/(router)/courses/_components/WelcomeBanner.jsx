@@ -3,7 +3,7 @@ import React from 'react'
 
 function WelcomeBanner() {
   return (
-    <div className='flex flex-col md:flex-row gap-5 items-center bg-gradient-to-r from-red-500 to-yellow-500 rounded-xl p-8'>
+    <div className='flex flex-col md:flex-row gap-5 items-center  rounded-xl p-8'>
       <div className='md:flex-shrink-0'>
         <Image src='/this.svg' alt='panda' width={120} height={130} />
       </div>

@@ -120,7 +120,7 @@ function SideNav() {
   return (
     <ThemeProvider attribute='class'> 
     <ThemeSwitcherProvider themeMap={themes} defaultTheme={themeState}>
-<div className={`sidebar ${isOpen ? 'open' : ''}`} style={{ backgroundColor: '#f8f8f8', height: '100vh', display: 'flex', flexDirection: 'column' }}>
+<div className={`sidebar ${isOpen ? 'open' : ''}`} style={{ backgroundColor: '#f8f8f8', height: '100vh', display: 'flex', flexDirection: 'column',zIndex:'0' }}>
   <div className="logo-container p-4 text-center">
     {/* Replace 'water.svg' with your actual logo */}
     <div className="relative">
@@ -155,6 +155,15 @@ function SideNav() {
         <MenuItem key={item.id} item={item} isActive={path.includes(item.path)} isLoaded={isLoaded} />
       ) : null
     )}
+     <div className="mt-4 flex bg-gray-200 hover:bg-gray-300 px-3 py-2 rounded-md flex-col items-center justify-center"  onClick={toggleTheme}
+    style={{ cursor: "pointer" }}>
+
+
+
+
+    Change Theme
+
+  </div>
  {user && isLoaded && (
       <div className="mt-4 flex flex-col items-center justify-center">
         <Link href='/courses'>
@@ -165,15 +174,7 @@ function SideNav() {
       </div>
 
     )}
-      <div className="mt-4 flex bg-gray-200 hover:bg-gray-300 px-3 py-2 rounded-md flex-col items-center justify-center"  onClick={toggleTheme}
-    style={{ cursor: "pointer" }}>
-
-
-
-
-    Change Theme
-
-  </div>
+     
   </div>
 
   {/* Button to toggle theme */}
