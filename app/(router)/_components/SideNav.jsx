@@ -5,11 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
-import { FaUserCircle } from 'react-icons/fa'; // Import the Avatar component from react-icons
+import { FaUserCircle, FaWhatsapp } from 'react-icons/fa'; // Import the Avatar and WhatsApp icons from react-icons
 import './styles/SideNav.css';
 import { SignOutButton } from "@clerk/nextjs";
 import { ThemeSwitcherProvider } from "react-css-theme-switcher";
 import { ThemeProvider } from 'next-themes';
+import { FaDiscord } from 'react-icons/fa';
 
 function MenuItem({ item, isActive, isLoaded }) {
   const { user } = useUser();
@@ -36,7 +37,6 @@ function MenuItem({ item, isActive, isLoaded }) {
 
 function SideNav() {
   const { user, isLoaded } = useUser();
-  console.log(user);
   const path = usePathname();
   const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
@@ -161,6 +161,23 @@ function SideNav() {
               </div>
             )}
           </div>
+
+          {/* WhatsApp Group Link */}
+          <div className="whatsapp-container mt-4 flex flex-col items-center justify-center">
+            <a href="https://chat.whatsapp.com/CTTEIUqowEzDGRBorlzQgJ" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md">
+              <FaWhatsapp size={24} /> {/* WhatsApp icon */}
+              <span>Join WhatsApp Group</span> {/* WhatsApp group text */}
+            </a>
+          </div>
+
+
+          <div className="discord-container mt-4 flex flex-col items-center justify-center">
+  <a href="YOUR_DISCORD_INVITE_LINK" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md">
+    <FaDiscord size={24} /> {/* Discord icon */}
+    <span>Join Discord Server</span> {/* Discord server text */}
+  </a>
+</div>
+
         </div>
       </ThemeSwitcherProvider>
     </ThemeProvider>

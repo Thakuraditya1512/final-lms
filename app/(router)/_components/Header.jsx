@@ -41,13 +41,13 @@ function Header() {
       {/* Header Content */}
       <div className='p-4 bg-black shadow-md flex justify-between items-center'>
         {/* Logo Placeholder */}
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-7'>
           <img src='/Logo.svg' alt='Logo' className='h-12' />
           <span className='font-bold text-xl text-white'>Learning Destiny</span>
         </div>
         {/* Get Started Button & Bell Icon */}
-        <div className='flex items-center gap-6'>
-          <BellDot className='text-white w-6 h-6 cursor-pointer hover:text-gray-400'/>
+        <div className='flex items-center gap-2'>
+          <BellDot className='text-white w-8 h-9 cursor-pointer hover:text-gray-400'/>
           {isLoaded && user ? (
             <UserButton afterSignOutUrl='/courses'/>
           ) : (
@@ -58,9 +58,10 @@ function Header() {
         </div>
       </div>
       {/* Scrolling Banner */}
-      <div className='bg-gradient-to-r from-blue-500 to-green-500 py-2 hidden lg:block'>
-        <marquee className='text-white font-bold'>Welcome to our Learning Destiny.</marquee>
-      </div>
+    <div className='bg-gradient-to-r from-blue-500 to-green-500 py-2 hidden lg:block'>
+  <marquee className='text-white font-bold' behavior='scroll' direction='left'>Welcome to our Learning Destiny.</marquee>
+</div>
+
     </div>
   );
 }
