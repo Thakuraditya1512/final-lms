@@ -90,7 +90,7 @@ function SideNav() {
     {
       id: 3,
       name: 'Upgrade to Pro',
-      path: '/TubegurujiPro',
+      path: '/Upgradetopro',
       auth: true,
     },
     {

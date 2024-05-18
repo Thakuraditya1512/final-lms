@@ -2,6 +2,7 @@ import { UserMemberContext } from '@/app/_context/UserMemberContext'
 import Image from 'next/image'
 import React, { useContext } from 'react'
 
+
 function Sources({courseInfo}) {
     const optionsList=[
         {
@@ -34,7 +35,7 @@ function Sources({courseInfo}) {
             items-center w-full cursor-pointer bg-white mb-3'
             onClick={()=>
                 !isMember
-                ?router.push('/tubeguruji-pro')
+                ?router.push('/Upgradetopro')
                 :window.open(courseInfo
                     [option.url])}
             >

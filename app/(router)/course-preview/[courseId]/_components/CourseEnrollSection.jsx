@@ -60,7 +60,7 @@ function CourseEnrollSection({courseInfo,isUserAlreadyEnrolled}) {
                     Buy Monthly Membership and Get Access to All Courses
                 </h2>
                 <Button className="bg-white text-primary hover:bg-white
-                hover:text-primary">Buy Membership Just $2.99</Button>
+                hover:text-primary">Subscription Rs 500</Button>
             </div>}
             {/* Above Section User Does not Have membership or Not Signup/Login  */}
 

@@ -39,15 +39,15 @@ function Header() {
   return (
     <div>
       {/* Scrolling Banner */}
-       {/* <div className='bg-gradient-to-r from-pink-500 to-white py-2'>
-        <marquee className='text-black font-bold'>Welcome to our website! Discover our courses today.</marquee>
-      </div> */}
+      <div className='bg-gradient-to-r from-pink-500 to-white py-2 hidden lg:block'>
+  <marquee className='text-black font-bold'>Welcome to our Learning Destiny.</marquee>
+</div>
       {/* Header Content */}
-      <div className='p-4 bg-white flex justify-between items-center' style={{ backgroundColor: '#fff' }}>
+      <div className='p-2 bg-white flex justify-between items-center' style={{ backgroundColor: '#fff' }}>
         {/* Logo Placeholder */}
-        <div className='flex items-center gap-2'>
-          <img src='/water.svg' alt='Logo' className='h-10'/>
-          <span className='font-semibold text-xl'>learning Destiny</span>
+        <div className='flex items-center gap-1'>
+          <img src='/Logo.svg' alt='Logo' className='h-30'/>
+          <span className='font-semibold'>learning Destiny</span>
         </div>
         {/* Get Started Button & Bell Icon */}
         <div className='flex items-center gap-4'>
