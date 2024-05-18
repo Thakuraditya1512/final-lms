@@ -10,7 +10,7 @@ function Courses() {
       {/* Left Container */}
       <div className='md:col-span-2 lg:col-span-3'>
         {/* Banner */}
-        <WelcomeBanner />
+        {/* <WelcomeBanner /> */}
         {/* Course List */}
         <CourseList />
       </div>

@@ -35,7 +35,7 @@ function Layout({ children }) {
     <div className="flex flex-col min-h-screen">
       {/* Mobile Sidebar Toggle Button */}
       <button
-        className={`mobile-sidebar-toggle md:hidden fixed top-5 right-5 z-50 bg-white p-2 rounded-lg shadow-md transition-all duration-300 ${
+        className={`mobile-sidebar-toggle md:hidden fixed top-5 right-0 z-50 bg-white p-2 rounded-lg shadow-md transition-all duration-300 ${
           isMobileSidebarOpen ? 'transform rotate-45' : ''
         }`}
         onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
@@ -58,7 +58,7 @@ function Layout({ children }) {
 
       {/* Main Content */}
       <div className='md:ml-64'>
-        {!isMobile && <Header />}
+       <Header isMobileSidebarOpen={isMobileSidebarOpen}/>
         <div className='w-full'>{children}</div>
       </div>
     </div>
