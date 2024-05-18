@@ -12,7 +12,7 @@ const getAllCourseList=async()=>{
           name
           id
           free
-          discription
+          description
           demoUrl
           banner {
             url
@@ -30,6 +30,7 @@ const getAllCourseList=async()=>{
           sourceCode
           tag
           slug
+          courseId
         }
       }      
     `
@@ -57,47 +58,50 @@ const getSideBanner=async()=>{
 }
 
 
-const getCourseById=async(courseId)=>{
-  const query=gql`
-  query MyQuery {
-    courseList(where: {slug: "`+courseId+`"}) {
-      author
-      banner {
-        url
-      }
-      chapter(first: 50) {
-        ... on Chapter {
-          id
-          name
-          video {
-            url
+const getCourseById = async (courseId) => {
+  const query = gql`
+    query MyQuery {
+      courseList(where: { id: "` + courseId + `" }) {
+        author
+        banner {
+          url
+        }
+        chapter(first: 50) {
+          ... on Chapter {
+            id
+            name
+            video {
+              url
+            }
           }
         }
+        courseId
+        demoUrl
+        description
+        free
+        id
+        name
+        slug
+        sourceCode
+        tag
+        youtubeUrl
+        totalChapters
       }
-      demoUrl
-      discription
-      free
-      id
-      name
-      slug
-      sourceCode
-      tag
-      youtubeUrl
-      totalChapters
     }
-  }
-  `
-  const result=await request(MASTER_URL,query);
-    return result;
-}
+  `;
+  const result = await request(MASTER_URL, query);
+  return result;
+};
+
 
 const enrollToCourse=async(courseId,email)=>{
   const query=gql`
   mutation MyMutation {
     createUserEnrollCourse(
-      data: {courseId: "`+courseId+`", userEmail: "`+email+`", courseList: {connect: {slug: "`+courseId+`"}}}
+      data: {courseId: "`+courseId+`", userEmail: "`+email+`", courseList: {connect: {courseId: "`+courseId+`"}}}
     ) {
       id
+      
     }
     publishManyUserEnrollCoursesConnection {
       edges {
@@ -156,7 +160,7 @@ const getUserEnrolledCourseDetails=async(id,email)=>{
           }
         }
         demoUrl
-        discription
+        description
         free
         id
         name
@@ -209,7 +213,7 @@ const getUserAllEnrolledCourseList=async(email)=>{
         slug
         sourceCode
         free
-        discription
+        description
         demoUrl
         chapter(first: 50) {
           ... on Chapter {

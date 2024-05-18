@@ -10,7 +10,8 @@ import WatchOnYoutube from './_components/WatchOnYoutube'
 import Sources from './_components/Sources'
 
 function CoursePreview({params}) {
-    
+    // const courseId = "clwbvdo3i0eni07pojgbwivyu"
+    console.log('paramas',params);
     const {user}=useUser();
     const [courseInfo,setCourseInfo]=useState();
     const [isUserAlreadyEnrolled,setIsUserAlreadyEnrolled]=useState();
@@ -25,8 +26,10 @@ function CoursePreview({params}) {
      * used to get Course Info By Slug/Id Name
      */
     const getCourseInfoById=()=>{
+     
         GlobalApi.getCourseById(params?.courseId).then(resp=>{
             setCourseInfo(resp?.courseList);
+            
             
         })
     }

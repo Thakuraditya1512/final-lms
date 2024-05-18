@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 function CourseList() {
   const [courseList, setCourseList] = useState([]);
-
+console.log(courseList);
   useEffect(() => {
     getAllCourses();
   }, []);
@@ -46,7 +46,7 @@ function CourseList() {
       {/* Display Course List */}
       <div className='grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4'>
         {courseList?.length > 0 ? courseList.map((item, index) => (
-          <Link href={'/course-preview/' + item.slug} key={index}>
+          <Link href={'/course-preview/' + item.id} key={index}>
             <div>
               <CourseItem course={item} />
             </div>
