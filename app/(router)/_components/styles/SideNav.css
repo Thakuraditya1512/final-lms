@@ -1,23 +1,23 @@
 .sidebar {
-  background-color: #ffffff; /* Dark background color */
-  color: white; /* White text color */
+  background-color: hsl(0, 0%, 100%); /* Dark background color */
+  color: rgb(253, 253, 253); /* White text color */
   height: 100vh;
-  width: 250px;
+  width: 270px;
   position: fixed;
   top: 0;
   left: 0;
   overflow-y: auto;
-  transition: all 0.3s ease;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  transition: all 0.2s ease;
+  box-shadow: 2px 0 5px rgba(206, 0, 0, 0.5);
   z-index: 1000; /* Ensure it stays on top */
 }
 
 .sidebar.open {
-  width: 300px;
+  width: 250px;
 }
 
 .logo-container {
-  background-color: #0061c3; /* Slightly darker background for the logo section */
+  background-color: #430000; /* Slightly darker background for the logo section */
   border-bottom: 1px solid #d88f8f; /* Border for separation */
 }
 
@@ -26,7 +26,7 @@
 }
 
 .menu a {
-  color: white;
+  color: rgb(255, 0, 0);
   text-decoration: none;
 }
 
@@ -35,9 +35,9 @@
 }
 
 .menu .bg-gray-200 {
-  background-color: #ffffff; /* Darker background for menu items */
+  background-color: #c9c9c9; /* Darker background for menu items */
 }
 
 .menu .hover\\:bg-gray-300:hover {
-  background-color: #f0e5e5; /* Slightly lighter on hover */
+  background-color: #781a1a; /* Slightly lighter on hover */
 }
