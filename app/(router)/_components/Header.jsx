@@ -41,10 +41,11 @@ function Header() {
       {/* Header Content */}
       <div className='p-4 bg-black shadow-md flex justify-between items-center'>
         {/* Logo Placeholder */}
-        <div className='flex items-center gap-7'>
-          <img src='/Logo.svg' alt='Logo' className='h-12' />
-          <span className='font-bold text-xl text-white'>Learning Destiny</span>
-        </div>
+        <div className='flex items-center gap-1'>
+  <img src='/logo2.svg' alt='Logo' className='h-12 md:h-16 lg:h-25' />
+  <span className='font-bold text-xl text-white md:text-2xl lg:text-3xl'>Learning Destiny</span>
+</div>
+
         {/* Get Started Button & Bell Icon */}
         <div className='flex items-center gap-2'>
           <BellDot className='text-white w-8 h-9 cursor-pointer hover:text-gray-400'/>

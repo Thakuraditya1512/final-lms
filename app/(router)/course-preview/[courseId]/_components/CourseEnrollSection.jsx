@@ -1,4 +1,3 @@
-// app/course-preview/[courseId]/_components/CourseEnrollSection.jsx
 import { UserMemberContext } from '@/app/_context/UserMemberContext';
 import GlobalApi from '@/app/_utils/GlobalApi';
 import { Button } from '@/components/ui/button';
