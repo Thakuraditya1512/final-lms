@@ -120,7 +120,7 @@ function SideNav() {
   return (
     <ThemeProvider attribute='class'> 
     <ThemeSwitcherProvider themeMap={themes} defaultTheme={themeState}>
-<div className={`sidebar ${isOpen ? 'open' : ''}`} style={{ backgroundColor: '#f8f8f8', height: '100vh', display: 'flex', flexDirection: 'column',zIndex:'0' }}>
+<div className={`sidebar ${isOpen ? 'open' : ''}`} style={{ backgroundColor: '#f8f8f8', height: '100vh', display: 'flex', flexDirection: 'column',zIndex:'100' }}>
   <div className="logo-container p-4 text-center">
     {/* Replace 'water.svg' with your actual logo */}
     <div className="relative">

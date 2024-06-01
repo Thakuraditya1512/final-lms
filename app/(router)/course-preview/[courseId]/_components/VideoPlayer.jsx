@@ -1,19 +1,20 @@
-import React from 'react'
+import React from 'react';
+import './VideoPlayer.css'; // Import the CSS file
 
-function VideoPlayer({videoUrl,poster}) {
-  console.log(videoUrl)
+function VideoPlayer({ videoUrl, poster }) {
+  console.log(videoUrl);
   return (
-    <video
-    width={1000}
-    height={250}
-    controls
-    key={videoUrl}
-    className='rounded-sm'
-    poster={poster}
-    >
-        <source src={videoUrl} type='video/mp4' />
-    </video>
-  )
+    <div className="video-player-container">
+      <video
+        className="video-player"
+        controls
+        key={videoUrl}
+        poster={poster}
+      >
+        <source src={videoUrl} type="video/mp4" />
+      </video>
+    </div>
+  );
 }
 
-export default VideoPlayer
+export default VideoPlayer;
