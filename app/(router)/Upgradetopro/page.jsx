@@ -9,7 +9,7 @@ import Script from 'next/script';
 import React, { useContext, useEffect, useState } from 'react'
 import { toast } from 'sonner';
 
-function TubegurujiPro() {
+function Upgradetopro() {
 
     const [subscriptionId,setSubscriptionId]=useState(null)
     const [loader,setLoader]=useState(false);
@@ -322,4 +322,4 @@ function TubegurujiPro() {
     );
 }
 
-export default TubegurujiPro
+export default Upgradetopro

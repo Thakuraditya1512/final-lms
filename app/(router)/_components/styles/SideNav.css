@@ -1,12 +1,40 @@
-
-.userButtonContainer {
-  display: flex;
-  justify-content: center;
+.sidebar {
+  background-color: hsl(0, 0%, 100%); /* Dark background color */
+  color: rgb(253, 253, 253); /* White text color */
+  height: 100vh;
+  width: 270px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: all 0.2s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Ensure it stays on top */
 }
 
-.userButton {
-  /* Add your custom styles to increase the size of the user button */
-  padding: 10px 20px; /* Adjust padding to increase button size */
-  font-size: 16px; /* Adjust font size to increase button size */
-  /* Add any other custom styles as needed */
+.sidebar.open {
+  width: 250px;
+}
+
+.logo-container {
+  background-color: #430000; /* Slightly darker background for the logo section */
+  border-bottom: 1px solid #d88f8f; /* Border for separation */
+}
+
+.menu {
+  padding: 20px;
+}
+
+.menu a {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+}
+
+
+.menu .bg-gray-200 {
+  background-color: #c9c9c9; /* Darker background for menu items */
+}
+
+.menu .hover\\:bg-gray-300:hover {
+  background-color: #781a1a; /* Slightly lighter on hover */
 }

@@ -38,29 +38,33 @@ function Header() {
 
   return (
     <div>
-      {/* Scrolling Banner */}
-       {/* <div className='bg-gradient-to-r from-pink-500 to-white py-2'>
-        <marquee className='text-black font-bold'>Welcome to our website! Discover our courses today.</marquee>
-      </div> */}
       {/* Header Content */}
-      <div className='p-4 bg-white flex justify-between items-center' style={{ backgroundColor: '#fff' }}>
+      <div className='p-4 bg-black shadow-md flex justify-between items-center'>
         {/* Logo Placeholder */}
-        <div className='flex items-center gap-2'>
-          <img src='/water.svg' alt='Logo' className='h-10'/>
-          <span className='font-semibold text-xl'>learning Destiny</span>
-        </div>
+        <div className='flex items-center gap-1'>
+  <img src='/logo2.svg' alt='Logo' className='h-12 md:h-16 lg:h-25' />
+  <span className='font-bold text-xl text-white md:text-2xl lg:text-3xl'>Learning Destiny</span>
+</div>
+
         {/* Get Started Button & Bell Icon */}
-        <div className='flex items-center gap-4'>
-          <BellDot className='text-gray-500'/>
-          {isLoaded && user
-          ? <UserButton afterSignOutUrl='/courses'/>
-          : <Link href='/sign-in'>
-              <Button>Get Started</Button>
-            </Link> }
+        <div className='flex items-center gap-2'>
+          <BellDot className='text-white w-8 h-9 cursor-pointer hover:text-gray-400'/>
+          {isLoaded && user ? (
+            <UserButton afterSignOutUrl='/courses'/>
+          ) : (
+            <Link href='/sign-in'>
+              <Button className='bg-gray-800 text-white hover:bg-gray-700'>Get Started</Button>
+            </Link>
+          )}
         </div>
       </div>
+      {/* Scrolling Banner */}
+    <div className='bg-gradient-to-r from-blue-500 to-green-500 py-2 hidden lg:block'>
+  <marquee className='text-white font-bold' behavior='scroll' direction='left'>Welcome to our Learning Destiny.</marquee>
+</div>
+
     </div>
-  )
+  );
 }
 
 export default Header;
