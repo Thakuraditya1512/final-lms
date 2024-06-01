@@ -87,12 +87,7 @@ function SideNav() {
       path: '/Upgradetopro',
       auth: true,
     },
-    {
-      id: 4,
-      name: 'Random Page',
-      path: '/random',
-      auth: true,
-    },
+   
     {
       id: 5,
       name: 'Newsletter Subscription',
@@ -103,6 +98,14 @@ function SideNav() {
       id: 6,
       name: 'Join Membership',
       path: '/membership',
+      auth: true,
+    },
+
+
+     {
+      id: 4,
+      name: 'Random Page',
+      path: '/random',
       auth: true,
     },
   ];
